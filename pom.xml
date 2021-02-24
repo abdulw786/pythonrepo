@@ -1,0 +1,29 @@
+<build>
+<plugins>
+    <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>1.6.0</version>
+        <executions>
+            <execution>
+                <configuration>
+                    <executable>python</executable>
+                    <workingDirectory>src\main\python\xxx\yyy\project1\</workingDirectory>
+                    <arguments>
+                        <argument>Launcher.py</argument>
+                    </arguments>
+                    <environmentVariables>
+                        <PYTHONPATH>
+                            ${project.basedir.parent}/common/src/main/python/   <!-- added PYTHONPATH -->
+                        </PYTHONPATH>
+                    </environmentVariables>
+                </configuration>
+                <id>python-build</id>
+                    <phase>prepare-package</phase>
+                    <goals>
+                        <goal>exec</goal>
+                    </goals>
+            </execution>
+        </executions>
+    </plugin>
+</plugins>
