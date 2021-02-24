@@ -1,0 +1,6 @@
+node{
+  stage('SCM Checkout'){
+	  git branch: 'main', url: 'https://github.com/abdulw786/pythonrepo.git'
+  
+	}
+  }
